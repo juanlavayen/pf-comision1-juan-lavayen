@@ -2,7 +2,7 @@ Proyecto Final - Experiencias de Viaje 🌍 : Argentina Programa - Tramo III - E
 
 Agencia de Viajes - Plataforma Interactiva 
 
-Resumen del Proyecto
+
 Bienvenido a la plataforma interactiva de experiencias de viajes. 
 Este proyecto tiene como objetivo crear un espacio en línea donde los apasionados por los viajes puedan compartir sus vivencias,
 descubrir nuevas aventuras y conectar con otros entusiastas.
