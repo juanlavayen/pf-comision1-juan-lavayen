@@ -19,7 +19,7 @@ export const ctrlCreatePost = async (req, res) => {
 
     await post.save();
 
-    return res.status(201).json(playlist);
+    return res.status(201).json(post);
   } catch (error) {
     return res.status(500).json({ error: error.message });
   }
