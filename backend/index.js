@@ -26,9 +26,6 @@ app.use('/api/auth', authRouter);
 app.use('/api/post', authHeader, validateToken, postRouter);
 app.use('/api/comment', authHeader, validateToken, commentRouter);
 
-//app.use('/api/playlist', authHeader, validateToken, playlistRouter);
-//app.use('/api/musics', authHeader, validateToken, musicRouter);
-
 app.listen(config.port, async () => {
   await startConnection({ uri: config.mongo, database: config.database });
   console.log('Server is running on port: http://localhost:' + config.port);
