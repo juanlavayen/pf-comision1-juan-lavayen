@@ -1,0 +1,54 @@
+.item {
+    display: flex;
+    flex-direction: column; /* Cambiado a columna para mostrar los elementos uno debajo del otro */
+    align-items: center; /* Centra los elementos horizontalmente */
+    padding: 10px;
+    margin-bottom: 10px;
+    box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
+    border-radius: 10px;
+  }
+  
+  .item picture {
+    margin-bottom: 10px; /* Añadido un margen inferior para separar la imagen del contenido superior */
+  }
+  
+  .item picture img {
+    width: 40px; /* Tamaño ajustado de la imagen según tus necesidades */
+    height: 40px;
+    object-fit: cover;
+    border-radius: 50%;
+  }
+  
+  .item section {
+    text-align: center; /* Centra el texto en el contenido */
+  }
+  
+  .item section h2 {
+    margin-bottom: 5px;
+  }
+  
+  .item section p {
+    font-size: 14px;
+    color: #555;
+    margin-bottom: 10px; /* Añadido un margen inferior para separar el contenido */
+  }
+  
+  .item div {
+    display: flex;
+    flex-direction: column; /* Cambiado a columna para mostrar los enlaces uno debajo del otro */
+    align-items: center; /* Centra los enlaces horizontalmente */
+  }
+  
+  .item div a {
+    margin-bottom: 5px; /* Añadido un margen inferior para separar los enlaces */
+  }
+  
+  .item div a svg {
+    font-size: 20px;
+  }
+  
+  .item:hover {
+    cursor: pointer;
+    background-color: #f1f1f1;
+  }
+  

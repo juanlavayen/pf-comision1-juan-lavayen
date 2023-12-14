@@ -2,10 +2,12 @@ import { PostModel } from '../models/Post.js';
 import { CommentModel } from '../models/Comment.js';
 
 export const ctrlCreatePost = async (req, res) => {
+  console.log(req.body);
   const userId = req.user._id;
 
   try {
-    const { title } = req.body;
+    const { title, description, comments, imageURL, createdAt } = req.body;
+    //const { title } = req.body;
 
     const post = new PostModel({
       title,
@@ -13,7 +15,7 @@ export const ctrlCreatePost = async (req, res) => {
       author: userId,
       comments,
       imageURL,
-      createAt
+      createdAt,
 
     });
 
@@ -21,11 +23,35 @@ export const ctrlCreatePost = async (req, res) => {
 
     return res.status(201).json(post);
   } catch (error) {
+    console.log(error);
     return res.status(500).json({ error: error.message });
   }
 };
 
+// En tu controlador de obtener publicaciones
 export const ctrlListPost = async (req, res) => {
+  const userId = req.user._id;
+
+  try {
+    const posts = await PostModel.find({ author: userId })
+      .populate('author', ['username', 'avatar'])
+      .populate({
+        path: 'comments',
+        populate: {
+          path: 'author',
+          select: ['username', 'avatar'],
+        },
+      });
+
+    console.log("Posts enviados al cliente:", posts); // Agrega este log
+    return res.status(200).json(posts);
+  } catch (error) {
+    return res.status(500).json({ error: error.message });
+  }
+};
+
+
+/* export const ctrlListPost = async (req, res) => {
   const userId = req.user._id;
 
   try {
@@ -37,15 +63,44 @@ export const ctrlListPost = async (req, res) => {
   } catch (error) {
     return res.status(500).json({ error: error.message });
   }
-};
+}; */
 
 export const ctrlGetPost = async (req, res) => {
+  const userId = req.user._id;
+  const { postId } = req.params;
+
+  try {
+    const post = await PostModel.findOne({
+      _id: postId,
+      author: userId,
+    })
+      .populate('author', ['username', 'avatar'])
+      .populate({
+        path: 'comments',
+        populate: {
+          path: 'author',
+          select: ['username', 'avatar'],
+        },
+      });
+
+    if (!post) {
+      return res.status(404).json({ error: 'Post not found' });
+    }
+
+    return res.status(200).json(post);
+  } catch (error) {
+    return res.status(500).json({ error: error.message });
+  }
+};
+
+
+/* export const ctrlGetPost = async (req, res) => {
   const userId = req.user._id;
   const { PostId } = req.params;
 
   try {
     const post = await PostModel.findOne({
-      _id: postId,
+      _id: PostId, // se cambio de postId a post
       author: userId,
     })
       .populate('author', ['username', 'avatar'])
@@ -59,7 +114,7 @@ export const ctrlGetPost = async (req, res) => {
   } catch (error) {
     return res.status(500).json({ error: error.message });
   }
-};
+}; */
 
 export const ctrlUpdatePost = async (req, res) => {
   const userId = req.user._id;
@@ -99,7 +154,7 @@ export const ctrlDeletePost = async (req, res) => {
       return res.status(404).json({ error: 'Post not found' });
     }
 
-    await CommentModel.deleteMany({ _id: { $in: post.coments } });
+    await CommentModel.deleteMany({ _id: { $in: post.comments } });
 
     await PostModel.findOneAndDelete({
       _id: postId,
