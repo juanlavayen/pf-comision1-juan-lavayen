@@ -44,7 +44,7 @@ function RegisterForm() {
 
   return (
     <div>
-      <h2>Register</h2>
+      <h2>Registrar nuevo usuario</h2>
       <form onSubmit={handleSubmit} ref={ref} className={styles.form}>
         <div className={styles.inputGroup}>
           <input type="url" placeholder="www.su-avatar.com" name="avatar" />
@@ -58,7 +58,10 @@ function RegisterForm() {
         <div className={styles.inputGroup}>
           <input type="password" placeholder="*******" name="password" />
         </div>
-        <button>Register</button>
+        <button>Registrar</button>
+        <button className={styles.homeButton} onClick={() => navigate("/")}>
+          Home
+        </button>
       </form>
     </div>
   );

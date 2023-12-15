@@ -5,7 +5,7 @@ const Navbar = () => {
     <nav className="navbar navbar-expand-lg bg-body-tertiary">
       <div className="container-fluid">
         <Link className="navbar-brand" to="/">
-          Navbar
+          EXP Viajes
         </Link>
         <button
           className="navbar-toggler"
@@ -32,7 +32,7 @@ const Navbar = () => {
             </li>
             <li className="nav-item">
               <Link className="nav-link" to="/post/new">
-                Crear Viaje
+                Crear experiencia de Viaje
               </Link>
             </li>
           </ul>

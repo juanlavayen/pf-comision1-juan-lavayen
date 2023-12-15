@@ -56,28 +56,7 @@ function PostPage() {
     </div>
   )}
 </main>
-      {/* <main className={styles.section}>
-        {error ? (
-          <p>{error}</p>
-        ) : (
-          <div>
-             {posts && posts.length > 0 ? (
-              posts.map((post) => (
-                <Post
-                  key={post._id}
-                  title={post.title}
-                  description={post.description}
-                  author={post.author.username}
-                  imageURL={post.imageURL}
-                  createdAt={post.createdAt}
-                />
-              ))
-            ) : (
-              <p>No hay posts disponibles.</p>
-            )}
-          </div>
-        )}
-      </main> */}
+      
     </div>
   );
 }

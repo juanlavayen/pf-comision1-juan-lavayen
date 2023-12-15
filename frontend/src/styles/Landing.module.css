@@ -7,6 +7,19 @@
   border-radius: 10px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
+.logoutButton {
+  padding: 10px 20px;
+  border: 1px solid #3498db;
+  background-color: #3498db;
+  color: #fff;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.logoutButton:hover {
+  background-color: #2980b9;
+}
 
 .buttonContainer {
   margin-top: 10px; /* Ajusta según sea necesario */
