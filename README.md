@@ -6,7 +6,7 @@ ExpTravel
 
 http://appsgi.ddns.net ( Despliegue de la aplicacion )
 
-Se creo un servidor virtual con windows server + mongodb + npm + node.js 
+Se creo un servidor virtual con windows server + mongodb + npm + node.js.
 Se creo un ddns con no-ip.com con una app para estar en linea.
 Se mapearon los puertos para acceder al servidor de frontend y backend.
 Se habilito en mongodb para aceptar conexiones externas.
