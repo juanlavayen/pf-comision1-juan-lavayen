@@ -28,7 +28,7 @@ export const ctrlCreatePost = async (req, res) => {
   }
 };
 
-// En tu controlador de obtener publicaciones
+// controlador de obtener publicaciones
 export const ctrlListPost = async (req, res) => {
   const userId = req.user._id;
 
@@ -49,21 +49,6 @@ export const ctrlListPost = async (req, res) => {
     return res.status(500).json({ error: error.message });
   }
 };
-
-
-/* export const ctrlListPost = async (req, res) => {
-  const userId = req.user._id;
-
-  try {
-    const posts = await PostModel.find({ author: userId })
-      .populate('author', ['username', 'avatar'])
-      .populate('comments', ['name', 'artist', 'year']);
-
-    return res.status(200).json(posts);
-  } catch (error) {
-    return res.status(500).json({ error: error.message });
-  }
-}; */
 
 export const ctrlGetPost = async (req, res) => {
   const userId = req.user._id;
@@ -93,28 +78,6 @@ export const ctrlGetPost = async (req, res) => {
   }
 };
 
-
-/* export const ctrlGetPost = async (req, res) => {
-  const userId = req.user._id;
-  const { PostId } = req.params;
-
-  try {
-    const post = await PostModel.findOne({
-      _id: PostId, // se cambio de postId a post
-      author: userId,
-    })
-      .populate('author', ['username', 'avatar'])
-      .populate('comments', ['name', 'artist', 'year']);
-
-    if (!post) {
-      return res.status(404).json({ error: 'Pots not found' });
-    }
-
-    return res.status(200).json(post);
-  } catch (error) {
-    return res.status(500).json({ error: error.message });
-  }
-}; */
 
 export const ctrlUpdatePost = async (req, res) => {
   const userId = req.user._id;

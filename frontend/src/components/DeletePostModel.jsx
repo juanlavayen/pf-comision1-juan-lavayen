@@ -33,7 +33,7 @@ const DeletePostModel = ({ postId, getPost }) => {
         <div className="modal-content">
           <div className="modal-header">
             <h1 className="modal-title fs-5" id={labelId}>
-              Delete Post
+              Borrar Post
             </h1>
             <button
               type="button"
@@ -43,7 +43,7 @@ const DeletePostModel = ({ postId, getPost }) => {
             ></button>
           </div>
           <div className="modal-body">
-            Are you sure you want to delete this post?
+            Esta seguro de eliminar el post?
           </div>
           <div className="modal-footer">
             <button
@@ -52,14 +52,14 @@ const DeletePostModel = ({ postId, getPost }) => {
               data-bs-dismiss="modal"
               ref={ref}
             >
-              Close
+              Cerrar
             </button>
             <button
               type="button"
               className="btn btn-danger"
               onClick={handleDelete}
             >
-              Delete
+              Borrar
             </button>
           </div>
         </div>
