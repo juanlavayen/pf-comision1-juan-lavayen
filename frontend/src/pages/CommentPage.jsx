@@ -1,4 +1,5 @@
 import { useContext, useEffect, useRef, useState } from "react";
+import styles from "../styles/AuthForm.module.css";
 import { useParams } from "react-router-dom";
 import { API_URL } from "../utils/consts";
 import { AuthContext } from "../providers/AuthProvider";
@@ -75,17 +76,15 @@ const CommentPage = () => {
       <Navbar />
       <h1>{post.title}</h1>
       <form onSubmit={handleCreateNewComment} ref={formRef}>
-        <input type="text" name="name" placeholder="comment name" />
         <input type="text" name="author" placeholder="author" />
-        <button>Create new Comment</button>
+        <input type="text" name="description" placeholder="comment name" />
+        
+        <button>Nuevo comentario</button>
       </form>
       {post.comments.map((comment) => {
         return (
           <div key={comment.id} className="comment">
-            <h2>{comment.name}</h2>
-            <p>
-              <i>{comment.artist}</i> {comment.year}
-            </p>
+            <h2>{comment.description}</h2>
             <button
               className="delete-button"
               onClick={() => handleDeleteComment(comment._id)}
