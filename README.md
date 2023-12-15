@@ -3,6 +3,14 @@ Proyecto Final - Experiencias de Viaje 🌍 : Argentina Programa - Tramo III - E
 ExpTravel
 ![page](https://github.com/juanlavayen/pf-comision1-juan-lavayen/assets/57622839/aa8d5843-5cfb-41bd-9e4c-dfba50b9ead1)
 
+
+http://appsgi.ddns.net ( Despliegue de la aplicacion )
+
+Se creo un servidor virtual con windows server + mongodb + npm + node.js 
+Se creo un ddns con no-ip.com con una app para estar en linea.
+Se mapearon los puertos para acceder al servidor de frontend y backend.
+Se habilito en mongodb para aceptar conexiones externas.
+
 Agencia de Viajes - Plataforma Interactiva 
 
 Bienvenido a la plataforma interactiva de experiencias de viajes. 
@@ -90,3 +98,4 @@ React
 
 
 NOTA : DIFICULTADES CON LAS RELACIONES, Y LA PUBLICACION DEL SITIO.
+
